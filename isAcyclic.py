@@ -14,7 +14,7 @@ isAcyclic(G,n): # G is graph with values as tuples {node, [connectedNodes] }
 
 	Q = [] # The queue.
 
-	enqueue(Q, s) # Add the starting node to the queue. 
+	enqueue(Q, start) # Add the starting node to the queue. 
 
 	while Q != []:  # While the queue isn't empty...
 		node = dequeue(Q) # Take the node from the outpipe of the queue (also removing it from the queue).
@@ -56,7 +56,7 @@ BFS(G,s):
 
 	Q = []
 
-	enqueue(Q, s)
+	enqueue(Q, start)
 
 	while Q != []: 
 		node = dequeue(Q)
