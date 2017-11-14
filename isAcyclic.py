@@ -25,11 +25,21 @@ isAcyclic(G,n): # G is graph with values as tuples {node, [connectedNodes] }
 				connectedNode.parent = node # Formally define the parent.
 			if connectedNode.status = explored & connectedNode.parent != node: # Main part: if we have seen the node *AND* it's not the parent (undirected graph means children can point back to their parents, which is not cyclic), then we have a cycle.
 				print("Something's cyclic...")
+				# catchCycle(connectedNode)
 				return false # This is not an acyclic graph. 
-		node.status = explored
+		node.status = explored # After all is said and done, this node has been explored. 
 
-		return true
+		return true # If we've gone through the queue and there are no nodes pointing to previous nodes that aren't their parents, then it's an acyclic graph. 
 
+catchCycle(connectedNode):
+	cycle = [] # The array to print. 
+	d = connectedNode.distance # The distance of the node that first loops back in the check. 
+	while distance > 0: # While we haven't reached the root...
+		cycle.append(connectedNode.parent) # Add the parent of this node.
+		distance = distance - 1 # Subtract distance to keep adding the parent of the parent, and so on until the root.
+	for i in range(d-1,0,-1): # Counting down from end of array (the root) until the first element...
+		print(str(cycle[i])) # Print that node. 
+		print(str(cycle[d-1]))
 
 BFS(G,s):
 
