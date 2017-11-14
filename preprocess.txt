@@ -1,1 +1,61 @@
 Optimal Prefix Codes and Trees
+
+
+fucking wrong 
+
+is_acyclic(G): #
+  checklist = [] # For use in 'while' loop.
+  for node in G: # An O(n) subprocedure
+      append.checklist(node) 
+  base = G[rand(0,n-1)] # Pick a random node to start the search.
+  
+  while checklist != []: # As long as there are unexplored nodes...
+  	  base.status = 'seen' # Mark the base as seen (assumed to be implemented via OOP). 
+     checklist.remove(base) # Remove the current base node from the exploration checklist. 
+     ci = 0 # Connection Index = first index
+     connected = base[1][ci] # The connection to analyze.
+     if connected == base: # If the first connection element of the connected node is simply 
+                             pointing to the node we just came from, move on to any next element 
+                             (since that is just a property of undirected edges and not 
+                             cyclicity).
+     while base[1][1] != null: # If there's another connection...
+       connected = base[1][1] # Set it to that connection.
+       if connected.status == 'seen': # If this new connection has been seen before, and it's not 
+                                   the base we just came from. 
+         print("Something's cyclical...")
+         return true
+         
+  return false # If we manage to go through the checklist without repeating any connected values (other than the symmetry of undirected edges), then the graph has no cycles. 
+    
+is_acyclic(G): # G represented as a connection matrix
+  n = G[0].length # Could be G[0][0].length as well
+  queue = [] # The list to check.
+  start = G[0][rand(0,n-1)] # Pick a random node to start the search
+  append.queue(start) 
+  while queue != []:
+    for node in queue:
+      for connected-node in node[1]:
+        append.queue(node)}
+
+ # Wrong again
+
+ is-acyclic(G): 
+  status = zeros(n) # An array to hold status of nodes.
+  node = G[rand(0,n-1)] # Pick a random node to start the search.
+  checklist.append(node) # Put the node in queue.
+  while checklist.length <= n: # As long as there are unexplored nodes...
+     distance-counter = distance-counter + 1 # Move the frontier forward breadth-wise.
+     while depth = i: 
+       checklist.remove(node) # Dequeue the current node. 
+       status[indexof(G,node)] = distance-counter # The dequeued node is now set as seen
+                                                  (value is above zero and set to distance from 
+                                                  root node - 1).
+       for connection in node[1]: # In the list of connections of that node...
+           if status[indexof(G,connection)] > 0: # ...if the connected node has been seen...
+              if distance-counter - status > 1: #... and if the connected node is not the one              
+                                                right before (accounting for bidirectionality)...
+                 print(`Something is cyclical...')
+                 return false # We have a non-acyclic graph.
+           else: # If we haven't seen this connected node...   
+             checklist.append(connection) # ...add to memory.
+         node = checklist[0]
