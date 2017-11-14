@@ -31,6 +31,8 @@ isAcyclic(G,n): # G is graph with values as tuples {node, [connectedNodes] }
 
 		return true # If we've gone through the queue and there are no nodes pointing to previous nodes that aren't their parents, then it's an acyclic graph. 
 
+		# This is O(n) because each node in an acyclic graph will have at most one redundant check if the first element is its single parent connection, the second connection and so forth being the next unexplored nodes. The first time the search discovers a redundant check that's not the parent, the function is complete. If not, it will operate on at most 2n, for a O(n) scale running time.   
+
 catchCycle(connectedNode):
 	cycle = [] # The array to print. 
 	d = connectedNode.distance # The distance of the node that first loops back in the check. 
